@@ -1,4 +1,6 @@
 def dot(x, y):
+    if len(x) != len(y):
+        raise ValueError(f"Vector length mismatch, got {x}, {y}")
     return sum(x[i]*y[i] for i in range(len(x)))
 
 

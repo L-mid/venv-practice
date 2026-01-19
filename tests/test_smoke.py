@@ -1,5 +1,5 @@
 from app import dot
-
+import pytest
 
 def test_dot():
 
@@ -17,3 +17,6 @@ def test_dot():
     assert dot((1,2), (1,2)) > tol
 
     assert dot((1,2), (-1,-2)) < tol 
+
+    with pytest.raises(ValueError):
+        dot((1,1,1), (1,1))
